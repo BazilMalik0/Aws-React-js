@@ -1,6 +1,6 @@
 import React from "react";
 import "./TeamSection.css";
-import { appData } from "../../app.js";
+import { appData } from "../../team.js";
 const Team = () => {
   return (
     <section id="team" className="team">
