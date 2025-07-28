@@ -1,46 +1,5 @@
-.team {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 51, 102, 0.05),
-    rgba(153, 102, 255, 0.05)
-  );
-  padding: 80px 0;
-}
-
-.team-container {
-  padding-left: 8.7rem;
-  padding-right: 8.7rem;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-header p {
-  color: var(--color-text-secondary);
-  font-size: 1.1rem;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.team-card {
+/* TeamCard.module.css */
+.teamCard {
   background: var(--color-surface);
   padding: 2rem;
   border-radius: 20px;
@@ -51,7 +10,7 @@
   overflow: hidden;
 }
 
-.team-card::before {
+.teamCard::before {
   content: "";
   position: absolute;
   top: 0;
@@ -63,16 +22,15 @@
   transition: transform 0.3s ease;
 }
 
-.team-card:hover::before {
+.teamCard:hover::before {
   transform: scaleX(1);
 }
 
-.team-card:hover {
-  transform: translateY(-10px);
+.teamCard:hover {
   box-shadow: 0 20px 40px rgba(153, 102, 255, 0.2);
 }
 
-.team-avatar {
+.teamAvatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -86,34 +44,34 @@
   transition: transform 0.3s ease;
 }
 
-.team-card:hover .team-avatar {
+.teamCard:hover .teamAvatar {
   transform: scale(1.1) rotate(10deg);
 }
 
-.team-card h3 {
+.teamCard h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-.team-position {
+.teamPosition {
   color: var(--electric-blue);
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
-.team-card p {
+.teamCard p {
   color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
-.team-social {
+.teamSocial {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-.team-social a {
+.teamSocial a {
   color: var(--color-text-secondary);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -122,7 +80,7 @@
   font-size: 0.9rem;
 }
 
-.team-social a:hover {
+.teamSocial a:hover {
   background: var(--gradient-primary);
   color: white;
   transform: translateY(-2px);
