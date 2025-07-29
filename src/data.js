@@ -94,7 +94,7 @@ const teamData = [
     role: "CEO & Founder",
     expertise: "Full-Stack Development, AI/ML",
     image: "/api/placeholder/200/200",
-    avatar: "ð¨âð¼",
+    avatar: "A",
     social: {
       linkedin: "https://linkedin.com/in/alexthompson",
       github: "https://github.com/alexthompson",
@@ -106,7 +106,7 @@ const teamData = [
     role: "CTO",
     expertise: "System Architecture, Cloud Solutions",
     image: "/api/placeholder/200/200",
-    avatar: "ð©âð»",
+    avatar: "P",
     social: {
       linkedin: "https://linkedin.com/in/priyapatel",
       github: "https://github.com/priyapatel",
@@ -118,7 +118,7 @@ const teamData = [
     role: "Lead Designer",
     expertise: "UI/UX Design, Branding",
     image: "/api/placeholder/200/200",
-    avatar: "ð¨âð¨",
+    avatar: "D",
     social: {
       linkedin: "https://linkedin.com/in/davidkim",
       dribbble: "https://dribbble.com/davidkim",
@@ -130,7 +130,7 @@ const teamData = [
     role: "Security Expert",
     expertise: "Cybersecurity, Penetration Testing",
     image: "/api/placeholder/200/200",
-    avatar: "ð©âð¬",
+    avatar: "L",
     social: {
       linkedin: "https://linkedin.com/in/lisawang",
       twitter: "https://twitter.com/lisawang",
@@ -144,7 +144,7 @@ const testimonialData = [
     company: "Tech Innovators Inc.",
     rating: 5,
     text: "Aws Infotech delivered an exceptional web application that exceeded our expectations. Their team's expertise in React and Node.js is outstanding.",
-    avatar: "ð©âð¼",
+    avatar: "S",
   },
   {
     id: 2,
@@ -152,7 +152,7 @@ const testimonialData = [
     company: "Digital Solutions Ltd.",
     rating: 5,
     text: "The mobile app they developed for us has been a game-changer. User engagement increased by 300% after launch.",
-    avatar: "ð¨âð»",
+    avatar: "M",
   },
   {
     id: 3,
@@ -160,7 +160,7 @@ const testimonialData = [
     company: "StartupHub",
     rating: 5,
     text: "Their AI solutions helped us automate our customer service, reducing response time by 80%. Highly recommended!",
-    avatar: "ð©âð¬",
+    avatar: "E",
   },
 ];
 export { portfolio, teamData, testimonialData, services };
