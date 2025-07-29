@@ -160,7 +160,7 @@ const testimonialData = [
     company: "StartupHub",
     rating: 5,
     text: "Their AI solutions helped us automate our customer service, reducing response time by 80%. Highly recommended!",
-    avatar: "E",
+    avatar: "R",
   },
 ];
 export { portfolio, teamData, testimonialData, services };
