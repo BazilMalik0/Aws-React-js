@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Card from "../Card/Card";
 import styles from "./PortFolio.module.css";
 import { portfolio } from "../../data";
-
 function PortFolio() {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -23,7 +22,7 @@ function PortFolio() {
       <div className={styles.container}>
         <div className={styles["section-header"]}>
           <h2>
-            Our Portfolio <span className={styles["section-emoji"]}>🖼️</span>
+            Our Portfolio <span className={styles["section-emoji"]}></span>
           </h2>
           <p>Showcasing our successful projects and amazing results</p>
         </div>

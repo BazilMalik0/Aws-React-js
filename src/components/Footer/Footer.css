@@ -138,3 +138,15 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.8);
 }
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #00d084;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
