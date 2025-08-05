@@ -17,7 +17,7 @@ function TestimonialCard({ name, company, rating, text, avatar }) {
             {Array(rating)
               .fill()
               .map((_, i) => (
-                <span key={i}>★</span>
+                <span key={i}></span>
               ))}
           </div>
         </div>

@@ -4,6 +4,7 @@ import "./navigation.css";
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,19 @@ function Navigation() {
       } else {
         setIsScrolled(false);
       }
+
+      // Detect which section is in view
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (
+          window.scrollY >= sectionTop - 300 &&
+          window.scrollY < sectionTop + sectionHeight - 300
+        ) {
+          setActiveLink(section.id);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,6 +37,11 @@ function Navigation() {
 
   const handleToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -40,43 +59,45 @@ function Navigation() {
         >
           <a
             href="#home"
-            className="navLink"
-            onClick={() => setIsMenuOpen(false)}
+            className={`navLink ${activeLink === "home" ? "active" : ""}`}
+            onClick={() => handleLinkClick("home")}
           >
             Home
           </a>
           <a
             href="#services"
-            className="navLink"
-            onClick={() => setIsMenuOpen(false)}
+            className={`navLink ${activeLink === "services" ? "active" : ""}`}
+            onClick={() => handleLinkClick("services")}
           >
             Services
           </a>
           <a
             href="#portfolio"
-            className="navLink"
-            onClick={() => setIsMenuOpen(false)}
+            className={`navLink ${activeLink === "portfolio" ? "active" : ""}`}
+            onClick={() => handleLinkClick("portfolio")}
           >
             Portfolio
           </a>
           <a
             href="#testimonials"
-            className="navLink"
-            onClick={() => setIsMenuOpen(false)}
+            className={`navLink ${
+              activeLink === "testimonials" ? "active" : ""
+            }`}
+            onClick={() => handleLinkClick("testimonials")}
           >
             Testimonials
           </a>
           <a
             href="#team"
-            className="navLink"
-            onClick={() => setIsMenuOpen(false)}
+            className={`navLink ${activeLink === "team" ? "active" : ""}`}
+            onClick={() => handleLinkClick("team")}
           >
             Team
           </a>
           <a
             href="#contact"
-            className="navLink"
-            onClick={() => setIsMenuOpen(false)}
+            className={`navLink ${activeLink === "contact" ? "active" : ""}`}
+            onClick={() => handleLinkClick("contact")}
           >
             Contact
           </a>
