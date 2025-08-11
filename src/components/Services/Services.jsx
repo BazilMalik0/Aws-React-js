@@ -8,7 +8,7 @@ const Services = () => {
       <div className="container">
         <div className="section-header">
           <h2>
-            Our Services <span className="section-emoji">✨</span>
+            Our Services <span className="section-emoji"></span>
           </h2>
           <p>Innovative solutions designed to propel your business forward</p>
         </div>
