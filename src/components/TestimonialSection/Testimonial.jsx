@@ -15,6 +15,8 @@ function Testimonial() {
     (testimonial) => testimonial.text && testimonial.name
   );
 
+  const firstThreeTestimonials = validTestimonials.slice(0, 3);
+
   const nextTestimonial = () => {
     swiperRef.current?.swiper.slideNext();
   };
@@ -23,7 +25,7 @@ function Testimonial() {
     swiperRef.current?.swiper.slidePrev();
   };
 
-  if (validTestimonials.length === 0) {
+  if (firstThreeTestimonials.length === 0) {
     return <div className={styles.container}>No testimonials available</div>;
   }
 
@@ -53,16 +55,18 @@ function Testimonial() {
               prevEl: `.${styles["testimonial-nav"]}.${styles.prev}`,
             }}
             autoplay={{
-              delay: 2000,
+              delay: 3000,
               disableOnInteraction: false,
               pauseOnMouseEnter: false,
             }}
             loop={true}
           >
-            {validTestimonials.map((testimonial) => (
-              <SwiperSlide key={testimonial.id}>
-                <div className={styles["testimonial-single"]}>
-                  <TestimonialCard {...testimonial} />
+            {[1, 2, 3].map((_, index) => (
+              <SwiperSlide key={`slide-${index}`}>
+                <div className={styles["testimonial-group"]}>
+                  {firstThreeTestimonials.map((testimonial) => (
+                    <TestimonialCard key={testimonial.id} {...testimonial} />
+                  ))}
                 </div>
               </SwiperSlide>
             ))}

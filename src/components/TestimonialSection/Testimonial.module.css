@@ -89,12 +89,23 @@
   padding-bottom: 3rem;
 }
 
-.testimonial-single {
-  display: flex;
-  justify-content: center;
+.testimonial-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonial-group {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Pagination Styles */
