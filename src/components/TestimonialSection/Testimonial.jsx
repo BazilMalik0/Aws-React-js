@@ -53,9 +53,9 @@ function Testimonial() {
               prevEl: `.${styles["testimonial-nav"]}.${styles.prev}`,
             }}
             autoplay={{
-              delay: 3000,
+              delay: 2000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
+              pauseOnMouseEnter: false,
             }}
             loop={true}
           >

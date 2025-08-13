@@ -1,6 +1,6 @@
 import React from "react";
 import "./heroSection.css";
-import { FaArrowRight } from "react-icons/fa";
+import { FaRocket, FaNetworkWired } from "react-icons/fa";
 
 function HeroSection() {
   const scrollToContact = () => {
@@ -44,7 +44,7 @@ function HeroSection() {
             >
               <span>Get Started</span>
               <span className="btn-icon">
-                <FaArrowRight style={{ marginTop: "8px" }} />
+                <FaRocket size={30} />
               </span>
             </button>
             <button
@@ -53,7 +53,7 @@ function HeroSection() {
             >
               <span>View Our Work</span>
               <span className="btn-icon">
-                <FaArrowRight style={{ marginTop: "8px" }} />
+                <FaNetworkWired size={30} />
               </span>
             </button>
           </div>
