@@ -1,3 +1,4 @@
+/* ====== Base Styles (Your Original) ====== */
 section {
   padding: 5rem 0;
   position: relative;
@@ -34,11 +35,9 @@ section {
   100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(-10px);
   }
-
   60% {
     transform: translateY(-5px);
   }
@@ -114,7 +113,6 @@ section {
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-10px);
   }
@@ -151,4 +149,56 @@ section {
 
 .tech-tag:hover {
   transform: scale(1.1);
+}
+
+/* ====== Mobile Responsive ====== */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .service-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .service-card {
+    padding: 1.2rem;
+    border-radius: 15px;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
 }

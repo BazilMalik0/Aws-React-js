@@ -5,7 +5,7 @@ function LoadingScreen({ onLoadingComplete }) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const loadingTime = 3000; // 3 seconds total
+    const loadingTime = 2000; // 3 seconds total
     const fadeOutTime = loadingTime - 500; // Start fade-out at 2.5s
 
     const fadeOutTimer = setTimeout(() => {

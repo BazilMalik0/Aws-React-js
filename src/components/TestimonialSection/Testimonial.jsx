@@ -3,10 +3,9 @@ import styles from "./Testimonial.module.css";
 import { testimonialData } from "../../data";
 import TestimonialCard from "../TestimonialCard/TeastimonialCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
 
@@ -50,12 +49,11 @@ function Testimonial() {
             ref={swiperRef}
             spaceBetween={30}
             slidesPerView={1}
-            modules={[Pagination, Autoplay, Navigation]}
-            pagination={{ clickable: true }}
+            modules={[Autoplay, Navigation]}
             autoplay={{
-              delay: 3000,
+              delay: 2000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
+              pauseOnMouseEnter: false,
             }}
             loop={true} // Enable loop mode
           >

@@ -8,7 +8,12 @@ function Card({ image, title, category, description, technologies, icon }) {
         className={styles["portfolio-image"]}
         style={{ backgroundColor: image }}
       >
-        <span>{icon}</span>
+        <span
+          className="material-icons"
+          style={{ fontSize: "2.5rem", color: "#fff" }}
+        >
+          {icon}
+        </span>
       </div>
 
       <div className={styles["portfolio-content"]}>
