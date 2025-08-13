@@ -1,25 +1,19 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styles from "./Testimonial.module.css";
 import { testimonialData } from "../../data";
 import TestimonialCard from "../TestimonialCard/TeastimonialCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-import "swiper/css/autoplay";
 
 function Testimonial() {
   const swiperRef = useRef(null);
 
-  // Filter out any empty testimonial data
   const validTestimonials = testimonialData.filter(
     (testimonial) => testimonial.text && testimonial.name
   );
-
-  // Take only the first 3 testimonials
-  const firstThreeTestimonials = validTestimonials.slice(0, 3);
 
   const nextTestimonial = () => {
     swiperRef.current?.swiper.slideNext();
@@ -29,8 +23,7 @@ function Testimonial() {
     swiperRef.current?.swiper.slidePrev();
   };
 
-  // Don't render if no valid testimonials
-  if (firstThreeTestimonials.length === 0) {
+  if (validTestimonials.length === 0) {
     return <div className={styles.container}>No testimonials available</div>;
   }
 
@@ -51,25 +44,30 @@ function Testimonial() {
             spaceBetween={30}
             slidesPerView={1}
             modules={[Pagination, Autoplay, Navigation]}
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+              el: `.${styles["custom-pagination"]}`,
+            }}
+            navigation={{
+              nextEl: `.${styles["testimonial-nav"]}.${styles.next}`,
+              prevEl: `.${styles["testimonial-nav"]}.${styles.prev}`,
+            }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            loop={true} // Enable loop mode
+            loop={true}
           >
-            {/* Duplicate the same slide 3 times to allow smooth looping */}
-            {[1, 2, 3].map((_, index) => (
-              <SwiperSlide key={`slide-${index}`}>
-                <div className={styles["testimonial-group"]}>
-                  {firstThreeTestimonials.map((testimonial) => (
-                    <TestimonialCard key={testimonial.id} {...testimonial} />
-                  ))}
+            {validTestimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className={styles["testimonial-single"]}>
+                  <TestimonialCard {...testimonial} />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className={styles["custom-pagination"]}></div>
         </div>
 
         <div className={styles["testimonials-navigation"]}>
