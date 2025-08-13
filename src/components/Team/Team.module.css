@@ -62,3 +62,34 @@ Team.module.css .team {
   grid-template-columns: repeat(4, minmax(280px, 1fr));
   gap: 2rem;
 }
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .sectionHeader p {
+    font-size: 1rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .sectionHeader p {
+    font-size: 0.9rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
