@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./navigation.css";
 
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+  const navMenuRef = useRef(null);
+  const navToggleRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,12 +30,26 @@ function Navigation() {
       });
     };
 
+    const handleClickOutside = (e) => {
+      if (
+        isMenuOpen &&
+        navMenuRef.current &&
+        !navMenuRef.current.contains(e.target) &&
+        navToggleRef.current &&
+        !navToggleRef.current.contains(e.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   const handleToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -54,6 +70,7 @@ function Navigation() {
           </div>
         </div>
         <div
+          ref={navMenuRef}
           className={`navMenu ${isMenuOpen ? "navMenuOpen" : ""}`}
           id="navMenu"
         >
@@ -102,7 +119,12 @@ function Navigation() {
             Contact
           </a>
         </div>
-        <button className="navToggle" id="navToggle" onClick={handleToggle}>
+        <button
+          ref={navToggleRef}
+          className={`navToggle ${isMenuOpen ? "open" : ""}`}
+          id="navToggle"
+          onClick={handleToggle}
+        >
           <span></span>
           <span></span>
           <span></span>
