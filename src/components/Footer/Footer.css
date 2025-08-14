@@ -72,7 +72,7 @@
 .footer-stat .stat-number {
   font-size: 2rem;
   font-weight: bold;
-  -webkit-text-fill-color: #b77035;
+  color: white;
   display: block;
 }
 

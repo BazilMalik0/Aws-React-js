@@ -276,7 +276,7 @@ const Contact = () => {
               >
                 <span>Send Message</span>
                 <span className="btn-icon">
-                  <IoSend style={{ marginTop: "13px" }} />
+                  <IoSend />
                 </span>
               </button>
             </form>
