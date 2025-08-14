@@ -18,19 +18,23 @@
 }
 
 @keyframes rainbowMove {
+
   0%,
   100% {
     transform: translateX(-100%);
   }
+
   50% {
     transform: translateX(100%);
   }
 }
+
 .container-footer {
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
+
 .footer-content {
   padding-left: 8.7rem;
   padding-right: 8.7rem;
@@ -39,6 +43,7 @@
   gap: 2rem;
   margin-bottom: 2rem;
 }
+
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: 1rem;
@@ -137,4 +142,49 @@
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 1.5rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .footer-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .footer-stat .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .footer-stat .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
 }
