@@ -30,12 +30,26 @@ function Navigation() {
       });
     };
 
+    const handleClickOutside = (e) => {
+      if (
+        isMenuOpen &&
+        navMenuRef.current &&
+        !navMenuRef.current.contains(e.target) &&
+        navToggleRef.current &&
+        !navToggleRef.current.contains(e.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   const handleToggle = () => setIsMenuOpen((prev) => !prev);
   const handleLinkClick = (link) => {
