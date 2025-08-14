@@ -44,7 +44,9 @@
   margin-bottom: 1rem;
   color: white;
 }
-
+.footer-section h4 {
+  display: flex;
+}
 .footer-emoji {
   font-size: 1.2em;
   margin-left: 0.5rem;
