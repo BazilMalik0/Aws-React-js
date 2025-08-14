@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./navigation.css";
 
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
-
-  const toggleRef = useRef(null);
-  const menuRef = useRef(null); // ✅ Added this
+  const navMenuRef = useRef(null);
+  const navToggleRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,10 +32,10 @@ function Navigation() {
     const handleClickOutside = (e) => {
       if (
         isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(e.target) &&
-        toggleRef.current &&
-        !toggleRef.current.contains(e.target)
+        navMenuRef.current &&
+        !navMenuRef.current.contains(e.target) &&
+        navToggleRef.current &&
+        !navToggleRef.current.contains(e.target)
       ) {
         setIsMenuOpen(false);
       }
@@ -44,11 +43,14 @@ function Navigation() {
 
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("click", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
+  }, [isMenuOpen]);
   }, [isMenuOpen]);
 
   const handleToggle = () => setIsMenuOpen((prev) => !prev);
@@ -90,7 +92,7 @@ function Navigation() {
           </div>
         </div>
         <div
-          ref={menuRef} // ✅ Attached here
+          ref={navMenuRef}
           className={`navMenu ${isMenuOpen ? "navMenuOpen" : ""}`}
           id="navMenu"
         >
@@ -140,7 +142,7 @@ function Navigation() {
           </a>
         </div>
         <button
-          ref={toggleRef}
+          ref={navToggleRef}
           className={`navToggle ${isMenuOpen ? "open" : ""}`}
           id="navToggle"
           onClick={handleToggle}
