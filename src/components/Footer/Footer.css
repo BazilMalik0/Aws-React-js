@@ -43,6 +43,7 @@
 .footer-section h4 {
   margin-bottom: 1rem;
   color: white;
+  display: flex;
 }
 
 .footer-emoji {
