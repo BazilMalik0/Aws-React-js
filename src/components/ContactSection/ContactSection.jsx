@@ -179,7 +179,7 @@ const Contact = () => {
                 <a href="#" className="social-link">
                   <span className="social-icon">
                     <FaInstagram
-                      style={{ marginTop: "0px", color: "BF3484" }}
+                      style={{ marginTop: "6px", color: "#b73c78" }}
                     />
                   </span>{" "}
                   <span>Instagram</span>
