@@ -40,7 +40,6 @@
 }
 
 @keyframes gradientShift {
-
   0%,
   100% {
     filter: hue-rotate(0deg);
@@ -115,7 +114,6 @@
 }
 
 @keyframes particleFloat {
-
   0%,
   100% {
     transform: translateY(100vh) scale(0);
@@ -268,10 +266,12 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -340,8 +340,10 @@
   }
 
   .container-heroSection {
-    padding: 1rem 0;
+    padding: 2.5rem 0;
     align-items: center;
+    height: 550px;
+    justify-content: center;
   }
 
   .hero-title {
@@ -362,13 +364,14 @@
   }
 
   .hero-stats {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
     align-items: center;
   }
 
   .stat-number {
     font-size: 2rem;
+    color: brown;
   }
 
   .stat-label {
@@ -395,8 +398,7 @@
   .hero-subtitle {
     font-size: 0.95rem;
   }
-
   .hero-buttons {
-    gap: 0.5rem;
-  }
+    gap: 0.5rem;
+  }
 }
