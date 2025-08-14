@@ -141,6 +141,7 @@
 .hero-title {
   font-size: 4rem;
   font-weight: bold;
+  margin-top: 20px;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   animation: titleSlide 1s ease-out;
