@@ -72,7 +72,7 @@
 .footer-stat .stat-number {
   font-size: 2rem;
   font-weight: bold;
-  color: white;
+  color: var(--bright-yellow);
   display: block;
 }
 
@@ -203,7 +203,6 @@
 
   .stat-number {
     font-size: 1.5rem;
-    -webkit-text-fill-color: #f1476f;
   }
 
   .footer-section h3,
