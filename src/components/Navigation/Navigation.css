@@ -147,6 +147,7 @@
     border-radius: 2px;
   }
 }
+<<<<<<< HEAD
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
@@ -214,3 +215,61 @@
     font-size: 0.95rem;
   }
 }
+=======
+/* Active link styling - Yellow gradient like hover */
+.navLink.active {
+  color: white;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.navLink.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-warm); /* Same yellow gradient as hover */
+  z-index: -1;
+  border-radius: 25px;
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Hover effect - Yellow gradient */
+.navLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-warm); /* Yellow gradient */
+  transition: left 0.3s ease;
+  z-index: -1;
+  border-radius: 25px;
+}
+
+.navLink:hover::before {
+  left: 0;
+}
+
+/* Animation for active state */
+@keyframes slideIn {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+/* Common styles for both states */
+.navLink:hover,
+.navLink.active {
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+}
+>>>>>>> f7a4359ea9452b30d3271290b1fa2da0a36061f9

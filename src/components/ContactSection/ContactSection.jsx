@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import "./ContactSection.css";
-
+import { IoSend } from "react-icons/io5";
+import {
+  FaEnvelope,
+  FaPhoneVolume,
+  FaLocationArrow,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa";
 const Contact = () => {
   const [toastVisible, setToastVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -119,21 +128,25 @@ const Contact = () => {
             </p>
             <div className="contact-details">
               <div className="contact-item">
-                <div className="contact-icon">ð§</div>
+                <div className="contact-icon">{<FaEnvelope />}</div>
                 <div className="contact-text">
                   <h4>Email</h4>
                   <p>info@Awsinfotech.com</p>
                 </div>
               </div>
               <div className="contact-item">
-                <div className="contact-icon">ð</div>
+                <div className="contact-icon">
+                  <FaPhoneVolume />
+                </div>
                 <div className="contact-text">
                   <h4>Phone</h4>
                   <p>+1 (555) 123-4567</p>
                 </div>
               </div>
               <div className="contact-item">
-                <div className="contact-icon">ð</div>
+                <div className="contact-icon">
+                  <FaLocationArrow />
+                </div>
                 <div className="contact-text">
                   <h4>Address</h4>
                   <p>123 Tech Park, Silicon Valley, CA 94000</p>
@@ -144,16 +157,30 @@ const Contact = () => {
               <h4>Follow Us</h4>
               <div className="social-links">
                 <a href="#" className="social-link">
-                  <span className="social-icon">ð</span> <span>Facebook</span>
+                  <span className="social-icon">
+                    <FaFacebook style={{ marginTop: "6px", color: "1877f2" }} />
+                  </span>{" "}
+                  <span>Facebook</span>
                 </a>
                 <a href="#" className="social-link">
-                  <span className="social-icon">ð¦</span> <span>Twitter</span>
+                  <span className="social-icon">
+                    <FaTwitter style={{ marginTop: "6px", color: "#1da1f2" }} />
+                  </span>{" "}
+                  <span>Twitter</span>
                 </a>
                 <a href="#" className="social-link">
-                  <span className="social-icon">ð¼</span> <span>LinkedIn</span>
+                  <span className="social-icon">
+                    <FaLinkedin
+                      style={{ marginTop: "6px", color: "#0077B5" }}
+                    />
+                  </span>{" "}
+                  <span>LinkedIn</span>
                 </a>
                 <a href="#" className="social-link">
-                  <span className="social-icon">ð·</span> <span>Instagram</span>
+                  <span className="social-icon">
+                    <FaInstagram style={{ marginTop: "6px", color: "" }} />
+                  </span>{" "}
+                  <span>Instagram</span>
                 </a>
               </div>
             </div>
@@ -246,7 +273,9 @@ const Contact = () => {
                 className="btn btn--primary btn--full-width"
               >
                 <span>Send Message</span>
-                <span className="btn-icon">ð</span>
+                <span className="btn-icon">
+                  <IoSend style={{ marginTop: "8px" }} />
+                </span>
               </button>
             </form>
           </div>

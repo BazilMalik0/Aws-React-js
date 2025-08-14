@@ -10,7 +10,7 @@ function Team() {
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2>
-            Meet Our Team <span className={styles.sectionEmoji}>👨‍💻</span>
+            Meet Our Team <span className={styles.sectionEmoji}></span>
           </h2>
           <p>The brilliant minds behind our innovative solutions</p>
         </div>

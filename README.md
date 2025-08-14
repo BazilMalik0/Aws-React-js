@@ -11,4 +11,8 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+<<<<<<< HEAD
 here are some change in readme file to demonstrate the working of git team project work in git
+=======
+I am creating a new branch name as Adfarsbranch.
+>>>>>>> f7a4359ea9452b30d3271290b1fa2da0a36061f9
