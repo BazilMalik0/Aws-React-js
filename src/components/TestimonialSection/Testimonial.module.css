@@ -172,41 +172,4 @@ section {
 .testimonial-nav:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
-<<<<<<< HEAD
 }
-=======
-}
-.testimonials-slider {
-  overflow: hidden;
-}
-
-.swiper-slide {
-  height: auto !important; /* Ensure slides take full height */
-}
-
-.swiper-wrapper {
-  align-items: center; /* Center slides vertically */
-}
-.testimonial-group {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 1rem;
-}
-
-@media (max-width: 1024px) {
-  .testimonial-group {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .testimonial-group {
-    grid-template-columns: 1fr;
-  }
-}
-
-.swiper-slide {
-  padding: 1rem 0;
-}
->>>>>>> f7a4359ea9452b30d3271290b1fa2da0a36061f9
