@@ -1,12 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./navigation.css";
 
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
-  const navMenuRef = useRef(null);
-  const navToggleRef = useRef(null);
+
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null); // ✅ Added this
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,7 +93,7 @@ function Navigation() {
           </div>
         </div>
         <div
-          ref={navMenuRef}
+          ref={menuRef} // ✅ Attached here
           className={`navMenu ${isMenuOpen ? "navMenuOpen" : ""}`}
           id="navMenu"
         >
@@ -142,7 +143,7 @@ function Navigation() {
           </a>
         </div>
         <button
-          ref={navToggleRef}
+          ref={toggleRef}
           className={`navToggle ${isMenuOpen ? "open" : ""}`}
           id="navToggle"
           onClick={handleToggle}
