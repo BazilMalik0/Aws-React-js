@@ -104,7 +104,7 @@
 
 @media (max-width: 640px) {
   .testimonial-group {
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
 
