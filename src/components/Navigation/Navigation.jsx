@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./navigation.css";
 
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null); // ✅ Added this
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,7 +17,6 @@ function Navigation() {
         setIsScrolled(false);
       }
 
-      // Detect which section is in view
       const sections = document.querySelectorAll("section");
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
@@ -35,14 +37,34 @@ function Navigation() {
     };
   }, []);
 
-  const handleToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+  const handleToggle = () => setIsMenuOpen((prev) => !prev);
   const handleLinkClick = (link) => {
     setActiveLink(link);
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav className={`navbar ${isScrolled ? "navbarScrolled" : ""}`} id="navbar">
@@ -54,6 +76,7 @@ function Navigation() {
           </div>
         </div>
         <div
+          ref={menuRef} // ✅ Attached here
           className={`navMenu ${isMenuOpen ? "navMenuOpen" : ""}`}
           id="navMenu"
         >
@@ -102,7 +125,12 @@ function Navigation() {
             Contact
           </a>
         </div>
-        <button className="navToggle" id="navToggle" onClick={handleToggle}>
+        <button
+          ref={toggleRef}
+          className={`navToggle ${isMenuOpen ? "open" : ""}`}
+          id="navToggle"
+          onClick={handleToggle}
+        >
           <span></span>
           <span></span>
           <span></span>
