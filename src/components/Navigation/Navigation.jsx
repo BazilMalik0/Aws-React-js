@@ -33,10 +33,10 @@ function Navigation() {
     const handleClickOutside = (e) => {
       if (
         isMenuOpen &&
-        navMenuRef.current &&
-        !navMenuRef.current.contains(e.target) &&
-        navToggleRef.current &&
-        !navToggleRef.current.contains(e.target)
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(e.target)
       ) {
         setIsMenuOpen(false);
       }
