@@ -1,8 +1,10 @@
 import React from "react";
 import "./FloatingGeometricShapes.css";
+import { Link } from "react-router-dom";
 
 const FloatingShapes = () => {
   return (
+  
     <div className="floating-shapes">
       <div className="shape shape-1"></div>
       <div className="shape shape-2"></div>

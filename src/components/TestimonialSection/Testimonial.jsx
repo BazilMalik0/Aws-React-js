@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./Testimonial.module.css";
 import { testimonialData } from "../../data";
 import TestimonialCard from "../TestimonialCard/TeastimonialCard";
@@ -10,6 +10,16 @@ import "swiper/css/pagination";
 
 function Testimonial() {
   const swiperRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+
+  // ✅ Detect screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const validTestimonials = testimonialData.filter(
     (testimonial) => testimonial.text && testimonial.name
@@ -44,17 +54,6 @@ function Testimonial() {
           <Swiper
             ref={swiperRef}
             spaceBetween={30}
-            breakpoints={{
-              // when window width is >= 0px
-              0: {
-                slidesPerView: 1,
-              },
-              // when window width is >= 1024px
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            // slidesPerView={1}
             modules={[Pagination, Autoplay, Navigation]}
             pagination={{
               clickable: true,
@@ -70,16 +69,30 @@ function Testimonial() {
               pauseOnMouseEnter: false,
             }}
             loop={true}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 1 },
+            }}
           >
-            {[1, 2, 3].map((_, index) => (
-              <SwiperSlide key={`slide-${index}`}>
-                <div className={styles["testimonial-group"]}>
-                  {firstThreeTestimonials.map((testimonial) => (
-                    <TestimonialCard key={testimonial.id} {...testimonial} />
-                  ))}
-                </div>
-              </SwiperSlide>
-            ))}
+            {isMobile
+              ? validTestimonials.map((testimonial) => (
+                  <SwiperSlide key={testimonial.id}>
+                    <TestimonialCard {...testimonial} />
+                  </SwiperSlide>
+                ))
+              : [1, 2, 3].map((_, index) => (
+                  <SwiperSlide key={`slide-${index}`}>
+                    <div className={styles["testimonial-group"]}>
+                      {firstThreeTestimonials.map((testimonial) => (
+                        <TestimonialCard
+                          key={testimonial.id}
+                          {...testimonial}
+                        />
+                      ))}
+                    </div>
+                  </SwiperSlide>
+                ))}
           </Swiper>
           <div className={styles["custom-pagination"]}></div>
         </div>

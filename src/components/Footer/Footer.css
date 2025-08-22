@@ -49,7 +49,9 @@
   margin-bottom: 1rem;
   color: white;
 }
-
+.footer-section h4 {
+  display: flex;
+}
 .footer-emoji {
   font-size: 1.2em;
   margin-left: 0.5rem;
@@ -74,7 +76,7 @@
 .footer-stat .stat-number {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--bright-yellow);
+  -webkit-text-fill-color: #b77035;
   display: block;
 }
 
@@ -252,6 +254,7 @@
 
   .stat-number {
     font-size: 1.5rem;
+    -webkit-text-fill-color: #b77035;
   }
 
   .footer-section h3,
