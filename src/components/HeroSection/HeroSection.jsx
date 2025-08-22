@@ -1,5 +1,6 @@
 import React from "react";
 import "./heroSection.css";
+import { FaRocket, FaNetworkWired } from "react-icons/fa";
 
 function HeroSection() {
   const scrollToContact = () => {
@@ -42,14 +43,18 @@ function HeroSection() {
               onClick={scrollToContact}
             >
               <span>Get Started</span>
-              <span className="btn-icon">â¨</span>
+              <span className="btn-icon">
+                <FaRocket size={30} />
+              </span>
             </button>
             <button
               className="btn btn--outline btn--lg"
               onClick={scrollToPortfolio}
             >
               <span>View Our Work</span>
-              <span className="btn-icon">ð</span>
+              <span className="btn-icon">
+                <FaNetworkWired size={30} />
+              </span>
             </button>
           </div>
           <div className="hero-stats">

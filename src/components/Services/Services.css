@@ -1,3 +1,4 @@
+/* ====== Base Styles (Your Original) ====== */
 section {
   padding: 5rem 0;
   position: relative;
@@ -153,37 +154,14 @@ section {
   transform: scale(1.1);
 }
 
-
-
-/* Tablet adjustments */
-@media (max-width: 1024px) {
-  .section-header h2 {
-    font-size: 2.5rem;
-  }
-
-  .section-header p {
-    font-size: 1.1rem;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
-
-
-/* Mobile adjustments */
+/* ====== Mobile Responsive ====== */
 @media (max-width: 768px) {
   section {
     padding: 3rem 1rem;
   }
 
-  .section-header {
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-  }
-
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .section-header p {
@@ -202,58 +180,28 @@ section {
   .service-icon {
     font-size: 3rem;
   }
-
-  .service-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .service-card p {
-    font-size: 0.95rem;
-  }
-
-  .service-tech {
-    gap: 0.5rem;
-  }
-
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.6rem;
-  }
 }
 
-
-/* Small mobile adjustments */
 @media (max-width: 480px) {
-  section {
-    padding: 2rem 0.8rem;
-  }
-
   .section-header h2 {
     font-size: 1.8rem;
   }
 
-  .section-emoji {
-    font-size: 1rem;
+  .section-header p {
+    font-size: 0.95rem;
   }
 
-  .services-grid {
-    gap: 1rem;
+  .service-card {
+    padding: 1.2rem;
+    border-radius: 15px;
   }
 
   .service-icon {
     font-size: 2.5rem;
   }
 
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
-  }
-
   .tech-tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
   }
 }

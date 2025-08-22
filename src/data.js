@@ -1,5 +1,6 @@
 // data.js
 
+import SecurityIcon from "@mui/icons-material/Security";
 const services = [
   {
     id: 1,
@@ -8,7 +9,7 @@ const services = [
       "Custom websites and web applications built with cutting-edge technologies",
     technologies: ["React", "Node.js", "MongoDB", "Express"],
     color: "#0066FF",
-    icon: "ð",
+    icon: "build_circle",
   },
   {
     id: 2,
@@ -17,7 +18,7 @@ const services = [
       "Native and cross-platform mobile applications for iOS and Android",
     technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
     color: "#FF6600",
-    icon: "ð±",
+    icon: "adb",
   },
   {
     id: 3,
@@ -26,7 +27,7 @@ const services = [
       "Intelligent solutions powered by artificial intelligence and machine learning",
     technologies: ["Python", "TensorFlow", "PyTorch", "OpenAI"],
     color: "#00CC66",
-    icon: "ð¤",
+    icon: "smart_toy",
   },
   {
     id: 4,
@@ -35,7 +36,7 @@ const services = [
       "Comprehensive security solutions to protect your digital assets",
     technologies: ["Penetration Testing", "Security Audits", "Compliance"],
     color: "#FF3366",
-    icon: "ð",
+    icon: "admin_panel_settings",
   },
   {
     id: 5,
@@ -44,7 +45,7 @@ const services = [
       "Beautiful and intuitive user interfaces that enhance user experience",
     technologies: ["Figma", "Adobe XD", "Sketch", "Prototyping"],
     color: "#9966FF",
-    icon: "ð¨",
+    icon: "colorize",
   },
   {
     id: 6,
@@ -52,7 +53,7 @@ const services = [
     description: "Scalable cloud infrastructure and deployment solutions",
     technologies: ["AWS", "Google Cloud", "Azure", "Docker"],
     color: "#00CCCC",
-    icon: "âï¸",
+    icon: "filter_drama",
   },
 ];
 const portfolio = [
@@ -64,7 +65,7 @@ const portfolio = [
     category: "Web Development",
     image: "/api/placeholder/400/300",
     color: "#0066FF",
-    icon: "ð",
+    icon: "add_shopping_cart",
   },
   {
     id: 2,
@@ -74,7 +75,7 @@ const portfolio = [
     category: "Mobile Development",
     image: "/api/placeholder/400/300",
     color: "#FF6600",
-    icon: "ð¥",
+    icon: "adb",
   },
   {
     id: 3,
@@ -84,7 +85,7 @@ const portfolio = [
     category: "AI & Machine Learning",
     image: "/api/placeholder/400/300",
     color: "#00CC66",
-    icon: "ð¬",
+    icon: "chat",
   },
 ];
 
@@ -95,7 +96,7 @@ const teamData = [
     role: "CEO & Founder",
     expertise: "Full-Stack Development, AI/ML",
     image: "/api/placeholder/200/200",
-    avatar: "AT",
+    avatar: "A",
     social: {
       linkedin: "https://linkedin.com/in/alexthompson",
       github: "https://github.com/alexthompson",
@@ -107,7 +108,7 @@ const teamData = [
     role: "CTO",
     expertise: "System Architecture, Cloud Solutions",
     image: "/api/placeholder/200/200",
-    avatar: "PP",
+    avatar: "P",
     social: {
       linkedin: "https://linkedin.com/in/priyapatel",
       github: "https://github.com/priyapatel",
@@ -119,7 +120,7 @@ const teamData = [
     role: "Lead Designer",
     expertise: "UI/UX Design, Branding",
     image: "/api/placeholder/200/200",
-    avatar: "DK",
+    avatar: "D",
     social: {
       linkedin: "https://linkedin.com/in/davidkim",
       dribbble: "https://dribbble.com/davidkim",
@@ -131,7 +132,7 @@ const teamData = [
     role: "Security Expert",
     expertise: "Cybersecurity, Penetration Testing",
     image: "/api/placeholder/200/200",
-    avatar: "LW",
+    avatar: "L",
     social: {
       linkedin: "https://linkedin.com/in/lisawang",
       twitter: "https://twitter.com/lisawang",
@@ -145,7 +146,7 @@ const testimonialData = [
     company: "Tech Innovators Inc.",
     rating: 5,
     text: "Aws Infotech delivered an exceptional web application that exceeded our expectations. Their team's expertise in React and Node.js is outstanding.",
-    avatar: "SJ",
+    avatar: "S",
   },
   {
     id: 2,
@@ -153,7 +154,7 @@ const testimonialData = [
     company: "Digital Solutions Ltd.",
     rating: 5,
     text: "The mobile app they developed for us has been a game-changer. User engagement increased by 300% after launch.",
-    avatar: "MC",
+    avatar: "M",
   },
   {
     id: 3,
@@ -161,7 +162,7 @@ const testimonialData = [
     company: "StartupHub",
     rating: 5,
     text: "Their AI solutions helped us automate our customer service, reducing response time by 80%. Highly recommended!",
-    avatar: "ER",
+    avatar: "R",
   },
 ];
 export { portfolio, teamData, testimonialData, services };
