@@ -9,6 +9,9 @@ function Navigation() {
   const toggleRef = useRef(null);
   const menuRef = useRef(null); // ✅ Added this
 
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null); // ✅ Added this
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -137,6 +140,13 @@ function Navigation() {
             onClick={() => handleLinkClick("contact")}
           >
             Contact
+          </a>
+          <a
+            href="#login"
+            className={`navLink ${activeLink === "login" ? "active" : ""}`}
+            onClick={() => handleLinkClick("login")}
+          >
+            Login
           </a>
         </div>
         <button
