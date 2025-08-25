@@ -138,13 +138,6 @@ function Navigation() {
           >
             Contact
           </a>
-          <a
-            href="#login"
-            className={`navLink ${activeLink === "login" ? "active" : ""}`}
-            onClick={() => handleLinkClick("login")}
-          >
-            Login
-          </a>
         </div>
         <button
           ref={toggleRef}
