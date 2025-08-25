@@ -43,7 +43,7 @@ const LoginPage = () => {
       // ✅ Ensure token exists
       if (data.token) {
         localStorage.setItem("token", data.token);
-        navigate("/admin-Pannel");
+        navigate("/admin-pannel");
       } else {
         setError("No token received from server ❌");
       }

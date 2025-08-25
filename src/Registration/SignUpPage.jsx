@@ -83,7 +83,7 @@ const SignupPage = () => {
             Sign Up
           </button>
           <div className="signup-links">
-            <Link to="/admin">Already have an account? Login</Link>
+            <Link to="/admin-pannel">Already have an account? Login</Link>
           </div>
         </form>
       </div>
