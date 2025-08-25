@@ -1,7 +1,10 @@
-// App.js
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 // ✅ Website components
 import Navigation from "./components/Navigation/Navigation";
 import HeroSection from "./components/HeroSection/HeroSection";
@@ -17,10 +20,17 @@ import Services from "./components/Services/Services";
 
 // ✅ Auth pages
 import LoginPage from "./Registration/LoginPage";
-import ForgotPasswordPage from "./Registration/ForgotPasswordPage"; // 🔥 you missed this
+import ForgotPasswordPage from "./Registration/ForgotPasswordPage";
+import Admin from "./components/Admin/Admin";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+
+  // ✅ Protected Route wrapper
+  const PrivateRoute = ({ children }) => {
+    const token = localStorage.getItem("token");
+    return token ? children : <Navigate to="/login" replace />;
+  };
 
   return (
     <Router>
@@ -51,8 +61,18 @@ function App() {
             />
 
             {/* Auth Routes */}
-            <Route path="/admin" element={<LoginPage />} />
+            <Route path="/admin-login" element={<LoginPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+
+            {/* Protected Admin Route */}
+            <Route
+              path="/admin-pannel"
+              element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         )}
       </div>
