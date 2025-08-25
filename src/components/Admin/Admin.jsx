@@ -37,7 +37,6 @@ function Admin() {
 
       {/* Main Content */}
       <main className={styles.main}>
-        {/* Top Navbar */}
         <header className={styles.header}>
           <input
             type="text"
@@ -46,8 +45,7 @@ function Admin() {
           />
           <div className={styles.headerRight}>
             <button className={styles.notification}>
-              🔔
-              <span className={styles.notificationBadge}>9</span>
+              🔔<span className={styles.notificationBadge}>9</span>
             </button>
             <img
               src="https://i.pravatar.cc/40"

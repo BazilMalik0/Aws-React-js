@@ -36,7 +36,7 @@ const ForgotPasswordPage = () => {
           </button>
 
           <div className="login-links">
-            <Link to="/admin">Back to Login</Link>
+            <Link to="/admin-login">Back to Login</Link>
           </div>
         </form>
       </div>

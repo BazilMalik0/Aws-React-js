@@ -9,9 +9,6 @@ function Navigation() {
   const toggleRef = useRef(null);
   const menuRef = useRef(null); // ✅ Added this
 
-  const toggleRef = useRef(null);
-  const menuRef = useRef(null); // ✅ Added this
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {

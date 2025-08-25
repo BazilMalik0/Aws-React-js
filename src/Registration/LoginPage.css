@@ -97,13 +97,13 @@
   font-size: 16px;
   transition: all 0.3s ease;
   outline: none;
-  background: #f9fafc;
+  color: initial;
 }
 
 .input-group input:focus {
   border-color: #667eea;
   box-shadow: 0 0 10px rgba(102, 126, 234, 0.35);
-  background: #fff;
+
   transform: translateY(-2px);
 }
 
@@ -138,4 +138,10 @@
   color: #667eea;
   text-decoration: none;
   transition: co;
+}
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
 }
