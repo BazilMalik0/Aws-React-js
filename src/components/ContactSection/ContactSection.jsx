@@ -158,20 +158,20 @@ const Contact = () => {
               <div className="social-links">
                 <a href="#" className="social-link">
                   <span className="social-icon">
-                    <FaFacebook style={{ marginTop: "6px", color: "1877f2" }} />
+                    <FaFacebook style={{ marginTop: "0px", color: "1877f2" }} />
                   </span>{" "}
                   <span>Facebook</span>
                 </a>
                 <a href="#" className="social-link">
                   <span className="social-icon">
-                    <FaTwitter style={{ marginTop: "6px", color: "#1da1f2" }} />
+                    <FaTwitter style={{ marginTop: "0px", color: "#1da1f2" }} />
                   </span>{" "}
                   <span>Twitter</span>
                 </a>
                 <a href="#" className="social-link">
                   <span className="social-icon">
                     <FaLinkedin
-                      style={{ marginTop: "6px", color: "#0077B5" }}
+                      style={{ marginTop: "0px", color: "#0077B5" }}
                     />
                   </span>{" "}
                   <span>LinkedIn</span>
@@ -179,7 +179,7 @@ const Contact = () => {
                 <a href="#" className="social-link">
                   <span className="social-icon">
                     <FaInstagram
-                      style={{ marginTop: "6px", color: "BF3484" }}
+                      style={{ marginTop: "0px", color: "BF3484" }}
                     />
                   </span>{" "}
                   <span>Instagram</span>

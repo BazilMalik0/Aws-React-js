@@ -162,7 +162,9 @@ textarea.form-control {
   font-weight: bold;
   animation: fadeInOut 4s ease forwards;
 }
-
+.btn-icon {
+  margin-top: 4px;
+}
 @keyframes fadeInOut {
   0% {
     opacity: 0;
